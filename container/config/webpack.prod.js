@@ -3,7 +3,7 @@ const ModuleFederationPlugin = require("webpack/lib/container/ModuleFederationPl
 const commonConfig = require("./webpack.common");
 const packageJson = require("../package.json");
 // const domain = process.env.PRODUCTION_DOMAIN;
-const domain='http://localhost:8081'
+const domain='https://micro-frontend-marketing.netlify.app'
 
 const prodConfig = {
   mode: "production",
