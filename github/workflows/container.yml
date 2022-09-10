@@ -18,6 +18,12 @@ jobs:
         - name: Checkout code
           uses: actions/checkout@v2
 
+        # Node version
+        - name: Use Node.js 16.x
+          uses: actions/setup-node@v2
+          with:
+          node-version: 16.x
+
         # Run yarn install and build on our code
         - name: Creates a build directory
         - run: yarn install
