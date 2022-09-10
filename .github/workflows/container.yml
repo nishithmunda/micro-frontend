@@ -6,10 +6,6 @@ on:
         - main
     paths:
       - 'container/**'
-
-defaults:
-    run:
-        working-directoy: container  
 jobs:     
     build:
         runs-on: ubuntu-latest
