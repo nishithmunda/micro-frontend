@@ -1,8 +1,11 @@
-import React from 'react';
-import MarketingApp from './components/MarketingApp';
+import React from "react";
+import MarketingApp from "./components/MarketingApp";
 
 export default () => {
   return (
-      <MarketingApp /> 
+    <div>
+      Marketing
+      <MarketingApp />
+    </div>
   );
 };
