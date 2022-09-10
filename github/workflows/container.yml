@@ -22,7 +22,6 @@ jobs:
         - name: Creates a build directory
         - run: yarn install
         - run: yarn build
-        env:
         # Deploy to Netlify using our dev secrets
         - name: Deploy to netlify
           uses: netlify/actions/cli@master
