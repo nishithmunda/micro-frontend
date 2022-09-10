@@ -16,16 +16,20 @@ jobs:
         steps:
         # Get code from repo
         - name: Checkout code
-          uses: actions/checkout@v2
+          uses: actions/checkout@v1
 
         # Run yarn install and build on our code
         - name: Creates a build directory
         - run: yarn install
         - run: yarn build
-
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         # Deploy to Netlify using our dev secrets
         - name: Deploy to netlify
           uses: netlify/actions/cli@master
           env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+          with:
+          args: deploy --dir=build --prod
+          secrets: '["NETLIFY_AUTH_TOKEN", "NETLIFY_SITE_ID"]'
