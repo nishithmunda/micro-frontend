@@ -4,6 +4,7 @@ import { StylesProvider } from '@material-ui/core/styles';
 
 import Landing from './components/Landing';
 import Pricing from './components/Pricing';
+import VideoPlayer from './components/VideoPlayer';
 
 export default () => {
   return (
@@ -12,7 +13,7 @@ export default () => {
         <BrowserRouter>
           <Switch>
             <Route exact path="/pricing" component={Pricing} />
-            <Route path="/" component={Landing} />
+            <Route path="/" component={VideoPlayer} />
           </Switch>
         </BrowserRouter>
       </StylesProvider>
