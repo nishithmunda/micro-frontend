@@ -12,6 +12,7 @@ const HomeScreen = React.lazy(() => {
   );
 });
 export default ({ history }: Props) => {
+  console.log("Here marketing")
   return (
     <div className="app">
       <StylesProvider>

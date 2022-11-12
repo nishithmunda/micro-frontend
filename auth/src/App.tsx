@@ -9,6 +9,7 @@ const SignIn = React.lazy(() => {
   );
 });
 export default ({ history, onSignIn }: Props) => {
+  console.log("Here auth")
   return (
     <div className="app">
       <Suspense fallback={<div>loading</div>}>
