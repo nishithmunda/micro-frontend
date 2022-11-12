@@ -1,10 +1,13 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
+  resolve: {
+    extensions: [".tsx", ".ts", ".js", ".jsx"],
+  },
   module: {
     rules: [
       {
-        test: /\.m?js$/,
+        test: /\.(js|jsx)$/,
         exclude: /node_modules/,
         use: {
           loader: "babel-loader",
@@ -18,6 +21,10 @@ module.exports = {
         test: /\.(ts|tsx)$/,
         exclude: /node_modules/,
         use: ["ts-loader"],
+      },
+      {
+        test: /\.mp4$/,
+        use: "file-loader?name=videos/[name].[ext]",
       },
       {
         test:/\.css$/,
