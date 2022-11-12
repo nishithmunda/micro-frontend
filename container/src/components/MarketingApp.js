@@ -9,9 +9,10 @@ export default () => {
   useEffect(() => {
     const { onParentNavigate } = mount(ref.current, {
       initialPath: history?.location?.pathname,
-      onNavigate: ({ pathname }) => {
-        if (history?.location?.pathname !== pathname) {
-          history.push(pathname);
+      onNavigate: function (e) {
+        console.log("e onNavigate", e);
+        if (history?.location?.pathname !== e?.pathname) {
+          history.push(e?.pathname);
         }
       },
     });
