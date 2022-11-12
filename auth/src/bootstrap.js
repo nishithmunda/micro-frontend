@@ -5,6 +5,7 @@ import { createMemoryHistory, createBrowserHistory } from "history";
 
 // Mount function to start up the app
 const mount = (el, { onSignIn, onNavigate, defaultHistory, initialPath }) => {
+  console.log("Object Auth", { onSignIn, onNavigate, defaultHistory, initialPath });
   const history =
     defaultHistory ||
     createMemoryHistory({
