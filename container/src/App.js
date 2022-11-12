@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import MarketingApp from "./components/MarketingApp";
 import AuthApp from "./components/AuthApp";
 import Navbar from "./components/Navigate/Navbar";
@@ -7,15 +7,18 @@ import { Switch, Route, BrowserRouter } from "react-router-dom";
 
 export default () => {
   const [isSignIn, setIsSignIn] = useState(false);
-  console.log("Here container")
+  useEffect(()=>{
+    console.log("Inside App")
+  },[])
+
   return (
     <div className="app">
       <BrowserRouter>
         <Navbar />
         <Switch>
-          <Route path="/auth" component={AuthApp}>
+          {/* <Route path="/auth" component={AuthApp}>
             <AuthApp setSignIn={(e) => setIsSignIn(e)} />
-          </Route>
+          </Route> */}
           <Route path="/" component={MarketingApp} />
         </Switch>
       </BrowserRouter>
