@@ -4,7 +4,6 @@ import App from "./App";
 import { createMemoryHistory, createBrowserHistory } from "history";
 // Mount function to start up the app
 const mount = (el, { onSignIn, onNavigate, defaultHistory, initialPath }) => {
-  console.log("initialPath", initialPath);
   const history =
     defaultHistory ||
     createMemoryHistory({
