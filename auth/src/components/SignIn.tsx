@@ -7,7 +7,7 @@ const SignIn = ({ onSignIn }: Props) => {
         height: "100vh",
         display: "flex",
         alignItems: "center",
-        justifyContent: "center",
+        justifyContent: "end",
       }}
     >
       <button

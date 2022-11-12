@@ -1,0 +1,29 @@
+name: deploy-auth
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "auth/**"
+
+defaults:
+  run:
+    working-directory: auth
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      # Get code from repo
+      - uses: actions/checkout@v2
+      # Run yarn install and build on our code
+      - run: yarn install
+      - run: yarn build
+      # Deploy to Netlify using our dev secrets
+      - uses: netlify/actions/cli@master
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_AUTH_SITE_ID: ${{ secrets.NETLIFY_AUTH_SITE_ID }}
+          with:
+          args: deploy --dir=build --prod
+          secrets: '["NETLIFY_AUTH_TOKEN", "NETLIFY_AUTH_SITE_ID"]'

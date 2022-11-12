@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import App from "./App";
 import { createMemoryHistory, createBrowserHistory } from "history";
+
 // Mount function to start up the app
 const mount = (el, { onSignIn, onNavigate, defaultHistory, initialPath }) => {
   const history =
