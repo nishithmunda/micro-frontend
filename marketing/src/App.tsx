@@ -2,8 +2,6 @@ import React, { Suspense } from "react";
 import { Switch, Route, Router } from "react-router-dom";
 import { StylesProvider } from "@material-ui/core/styles";
 import "./App.css";
-import Landing from "./components/Landing";
-// import Pricing from "./components/Pricing";
 import VideoPlayer from "./components/VideoPlayer";
 import LoadingScreen from "./components/LoadingScreen";
 const Pricing = React.lazy(() => import("./components/Pricing"));
