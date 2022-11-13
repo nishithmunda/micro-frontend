@@ -10,6 +10,7 @@ const prodConfig = {
   mode: "production",
   output: {
     filename: "[name].[contenthash].js",
+    publicPath: "https://micro-frontend-container.netlify.app/",
   },
   plugins: [
     new ModuleFederationPlugin({
