@@ -10,16 +10,14 @@ const prodConfig = {
   mode: "production",
   output: {
     filename: "[name].[contenthash].js",
-    publicPath: "/",
+    publicPath: 'https://micro-frontend-container.netlify.app/'
   },
   plugins: [
     new ModuleFederationPlugin({
       name: "container",
       remotes: {
-        // marketing: `marketing@${domain}/remoteEntry.js`,
-        // auth: `auth@${authDomain}/remoteEntry.js`,
-        marketing: 'marketing@http://localhost:8081/remoteEntry.js',
-        auth:'auth@http://localhost:8082/remoteEntry.js'
+        marketing: `marketing@${domain}/remoteEntry.js`,
+        auth: `auth@${authDomain}/remoteEntry.js`,
       },
       shared: packageJson.dependencies,
     }),
