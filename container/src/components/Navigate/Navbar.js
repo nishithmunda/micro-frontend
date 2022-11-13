@@ -6,10 +6,6 @@ import { useHistory } from "react-router-dom";
 function Navbar() {
   const history = useHistory();
   const [show, handleShow] = useState(false);
-
-  {
-    console.log(history);
-  }
   const navbarBackground = () => {
     if (window.scrollY > 100) {
       handleShow(true);

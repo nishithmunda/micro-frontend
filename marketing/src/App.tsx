@@ -3,28 +3,26 @@ import { Switch, Route, Router } from "react-router-dom";
 import { StylesProvider } from "@material-ui/core/styles";
 import "./App.css";
 import VideoPlayer from "./components/VideoPlayer";
-import HomeScreen from "./components/HomeScreen";
 import LoadingScreen from "./components/LoadingScreen";
-// const HomeScreen = React.lazy(() => {
-//   return new Promise((resolve: any) =>
-//     setTimeout(() => {
-//       resolve(import("./components/HomeScreen"));
-//     }, 3000)
-//   );
-// });
+const HomeScreen = React.lazy(() => {
+  return new Promise((resolve: any) =>
+    setTimeout(() => {
+      resolve(import("./components/HomeScreen"));
+    }, 3000)
+  );
+});
 export default ({ history }: Props) => {
-  console.log("Here marketing");
   return (
     <div className="app">
       <StylesProvider>
-        {/* <Suspense fallback={<LoadingScreen />}> */}
-        <Router history={history}>
-          <Switch>
-            <Route path="/playing" component={VideoPlayer} />
-            <Route path="/" component={HomeScreen} />
-          </Switch>
-        </Router>
-        {/* </Suspense> */}
+        <Suspense fallback={<LoadingScreen />}>
+          <Router history={history}>
+            <Switch>
+              <Route path="/playing" component={VideoPlayer} />
+              <Route path="/" component={HomeScreen} />
+            </Switch>
+          </Router>
+        </Suspense>
       </StylesProvider>
     </div>
   );

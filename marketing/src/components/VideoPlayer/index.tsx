@@ -105,7 +105,6 @@ const VideoPlayer = ({ url }: VideoPlayerProp) => {
           </div>
         </div>
       </div>
-      {console.log("playerState", playerState)}
     </>
   );
 };

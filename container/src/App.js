@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import MarketingApp from "./components/MarketingApp";
 import AuthApp from "./components/AuthApp";
 import Navbar from "./components/Navigate/Navbar";
@@ -7,10 +7,7 @@ import { Switch, Route, BrowserRouter } from "react-router-dom";
 
 export default () => {
   const [isSignIn, setIsSignIn] = useState(false);
-  useEffect(()=>{
-    console.log("Inside App")
-  },[])
-
+  
   return (
     <div className="app">
       <BrowserRouter>

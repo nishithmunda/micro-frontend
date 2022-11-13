@@ -1,16 +1,14 @@
 import React, { Suspense } from "react";
 import { Switch, Route, Router } from "react-router-dom";
-import SignIn from "./components/SignIn";
 
-// const SignIn = React.lazy(() => {
-//   return new Promise((resolve: any) =>
-//     setTimeout(() => {
-//       resolve(import("./components/SignIn"));
-//     }, 3000)
-//   );
-// });
+const SignIn = React.lazy(() => {
+  return new Promise((resolve: any) =>
+    setTimeout(() => {
+      resolve(import("./components/SignIn"));
+    }, 3000)
+  );
+});
 export default ({ history, onSignIn }: Props) => {
-  console.log("Here auth")
   return (
     <div className="app">
       <Suspense fallback={<div>loading</div>}>
