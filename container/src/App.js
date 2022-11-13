@@ -16,9 +16,9 @@ export default () => {
       <BrowserRouter>
         <Navbar />
         <Switch>
-          {/* <Route path="/auth" component={AuthApp}>
+          <Route path="/auth" component={AuthApp}>
             <AuthApp setSignIn={(e) => setIsSignIn(e)} />
-          </Route> */}
+          </Route>
           <Route path="/" component={MarketingApp} />
         </Switch>
       </BrowserRouter>
