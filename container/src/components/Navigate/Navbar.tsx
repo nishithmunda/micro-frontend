@@ -1,11 +1,14 @@
 import React, { useEffect, useState } from "react";
 import Logo from "./Logo";
 import "./Navbar.css";
-import { useHistory } from "react-router-dom";
+import { useHistory, useLocation } from "react-router-dom";
 
 function Navbar() {
+  const hideArray = ["/auth/signin"];
   const history = useHistory();
+  const location = useLocation();
   const [show, handleShow] = useState(false);
+  const [isShowNav, setIsShowNav] = useState(true);
   const navbarBackground = () => {
     if (window.scrollY > 100) {
       handleShow(true);
@@ -19,8 +22,21 @@ function Navbar() {
       window.removeEventListener("scroll", navbarBackground);
     };
   });
+
+  useEffect(() => {
+    if (!hideArray.includes(location?.pathname)) {
+      setIsShowNav(false);
+    } else {
+      setIsShowNav(true);
+    }
+  }, [location?.pathname]);
+
   return (
-    <div className={`navbar ${show && "navbar__black"}`}>
+    <div
+      className={`${isShowNav && "navbar__hide"} navbar ${
+        show && "navbar__black"
+      }`}
+    >
       <div
         className="nav__logo"
         onClick={() => {
@@ -29,15 +45,7 @@ function Navbar() {
       >
         <Logo />
       </div>
-
-      <button
-        className="nav__avatar"
-        onClick={() => {
-          history.push("/auth/signin");
-        }}
-      >
-        Login
-      </button>
+      <div></div>
     </div>
   );
 }

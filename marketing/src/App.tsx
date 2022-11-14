@@ -11,6 +11,11 @@ const HomeScreen = React.lazy(() => {
     }, 3000)
   );
 });
+
+const VideoScreen = React.lazy(() => {
+  return import("./components/VideoScreen");
+});
+
 export default ({ history }: Props) => {
   return (
     <div className="app">
@@ -18,7 +23,7 @@ export default ({ history }: Props) => {
         <Suspense fallback={<LoadingScreen />}>
           <Router history={history}>
             <Switch>
-              <Route path="/playing" component={VideoPlayer} />
+              <Route path="/playing" component={VideoScreen} />
               <Route path="/" component={HomeScreen} />
             </Switch>
           </Router>

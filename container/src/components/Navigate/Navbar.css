@@ -14,8 +14,17 @@
   transition: all 0.3s;
 }
 
+.navbar__hide {
+  display: none;
+}
 .navbar__black {
-  background-color: #111;
+  background: linear-gradient(
+    2.87deg,
+    #130b29 9.89%,
+    #5436a9 100%,
+    #5e47a1 100%
+  );
+  backdrop-filter: blur(20px);
 }
 .nav__logo {
   width: 60px;

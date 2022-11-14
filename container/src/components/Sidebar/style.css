@@ -1,0 +1,36 @@
+.sidebar {
+  position: fixed;
+  width: 80px;
+  height: 321px;
+  left: 0;
+  top: 122px;
+
+  background: linear-gradient(
+    2.87deg,
+    #130b29 9.89%,
+    #5436a9 100%,
+    #5e47a1 100%
+  );
+  border-radius: 0 26px 26px 0;
+  padding: 40px 0;
+}
+
+.sidebar__align {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 35px;
+}
+
+.sidebar__item{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+}
+.sidebar__item__title{
+  margin-top: 8px;  
+  color: #FFF;
+  font-size: small;
+}
+

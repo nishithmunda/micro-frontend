@@ -1,0 +1,33 @@
+.videoscreen {
+  display: flex;
+  width: 100%;
+  min-height: 100vh;
+  background-color: #111;
+}
+
+.videoscreen__detail__section {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.videoscreen__recommand__section {
+  width: 30%;
+}
+
+.video__info__container {
+}
+
+.video__info {
+  display: flex;
+}
+
+.video__info__right {
+}
+.video__sypnosis {
+}
+
+.video__player__container {
+
+}

@@ -1,5 +1,6 @@
 import React, { Suspense } from "react";
 import { Switch, Route, Router } from "react-router-dom";
+import LoadingScreen from "./components/LoadingScreen";
 
 const SignIn = React.lazy(() => {
   return new Promise((resolve: any) =>
@@ -11,7 +12,7 @@ const SignIn = React.lazy(() => {
 export default ({ history, onSignIn }: Props) => {
   return (
     <div className="app">
-      <Suspense fallback={<div>loading</div>}>
+      <Suspense fallback={<LoadingScreen />}>
         <Router history={history}>
           <Switch>
             <Route path="/auth/signin">
