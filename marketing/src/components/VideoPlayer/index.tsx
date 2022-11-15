@@ -17,7 +17,7 @@ const CustomSlider = styled(Slider)({
   color: "#FCFCFC",
 });
 
-const VideoPlayer = ({ url }: VideoPlayerProp) => {
+const VideoPlayer = ({ url, placeholderImage }: VideoPlayerProp) => {
   const videoElement = useRef(null);
   const {
     playerState,
@@ -36,6 +36,7 @@ const VideoPlayer = ({ url }: VideoPlayerProp) => {
           className={`video-wrapper ${playerState.isFullScreen && "fullsreen"}`}
         >
           <video
+            poster={placeholderImage}
             className="main-video"
             width="100%"
             height="100%"
@@ -113,4 +114,5 @@ export default VideoPlayer;
 
 interface VideoPlayerProp {
   url: string;
+  placeholderImage?: string;
 }

@@ -16,8 +16,16 @@
   width: 30%;
 }
 
-.video__info__container {
+.video__title {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 32px;
+  letter-spacing: 0.07em;
+  color: #ffffff;
+}
 
+.video__info__container {
 }
 
 .video__info {
@@ -25,9 +33,37 @@
 }
 
 .video__info__right {
+  padding: 0 30px;
 }
 .video__sypnosis {
 }
-
+.video__sypnosis__header {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 32px;
+  color: #ffffff;
+}
+.video__sypnosis__detail {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 23px;
+  color: #868686;
+}
 .video__player__container {
+}
+
+.video__poster {
+  width: 200px;
+  height: 300px;
+  border-radius: 12px;
+}
+
+.vertical__space30 {
+  margin-top: 30px;
+}
+
+.vertical__space15 {
+  margin-top: 15px;
 }
