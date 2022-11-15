@@ -23,7 +23,7 @@ export default ({ history }: Props) => {
         <Suspense fallback={<LoadingScreen />}>
           <Router history={history}>
             <Switch>
-              <Route path="/playing" component={VideoScreen} />
+              <Route path="/playing/:movieId" component={VideoScreen} />
               <Route path="/" component={HomeScreen} />
             </Switch>
           </Router>

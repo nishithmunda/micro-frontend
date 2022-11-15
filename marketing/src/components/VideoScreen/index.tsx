@@ -1,8 +1,29 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./style.css";
 import VideoPlayer from "../VideoPlayer";
+import Axios from "../../ApiRequests/instance";
+import { useParams } from "react-router-dom";
+import { API_KEY } from "../../ApiRequests/requests";
+const base_url = "https://api.themoviedb.org/3";
 
 const VideoScreen = () => {
+  const [movie, setMovie] = useState<any>({});
+  const { movieId }: any = useParams();
+
+  useEffect(() => {
+    async function fetchData() {
+      const request = await Axios.get(`${base_url}/movie/${movieId}`, {
+        params: {
+          api_key: API_KEY,
+        },
+      });
+      setMovie(request?.data);
+      return request;
+    }
+    fetchData();
+  }, [movieId]);
+
+  console.log("movie", movie);
   return (
     <div className="videoscreen">
       <div className="videoscreen__detail__section">

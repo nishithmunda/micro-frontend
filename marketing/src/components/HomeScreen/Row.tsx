@@ -7,7 +7,7 @@ const base_url = "https://image.tmdb.org/t/p/original/";
 function Row({ title, fetchUrl, isLargeRow }: RowProps) {
   const [movies, setMovies] = useState<Array<MovieType>>([]);
   const history = useHistory();
-  
+
   useEffect(() => {
     async function fetchData() {
       const request = await Axios.get(fetchUrl);
@@ -27,7 +27,7 @@ function Row({ title, fetchUrl, isLargeRow }: RowProps) {
             movie?.backdrop_path.length > 0 && (
               <img
                 onClick={() => {
-                  history.push("/playing");
+                  history.push(`/playing/${movie?.id}`);
                 }}
                 loading="lazy"
                 key={movie?.id}
