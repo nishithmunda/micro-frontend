@@ -13,7 +13,7 @@ const Sidebar = () => {
         <VideoIcon style={{ width: 30 }} />
         <p className="sidebar__item__title">Movies</p>
       </div>
-      <div className="sidebar__item" onClick={() => history.push(`/music`)}>
+      <div className="sidebar__item" onClick={() => history.push(`/playing/music`)}>
         <MusicIcon style={{ width: 30 }} />
         <p className="sidebar__item__title">Music</p>
       </div>

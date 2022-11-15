@@ -2,8 +2,8 @@ import React, { Suspense } from "react";
 import { Switch, Route, Router } from "react-router-dom";
 import { StylesProvider } from "@material-ui/core/styles";
 import "./App.css";
-import VideoPlayer from "./components/VideoPlayer";
 import LoadingScreen from "./components/LoadingScreen";
+import ConstructionScreen from "./components/LoadingScreen/ConstructionScreen";
 const HomeScreen = React.lazy(() => {
   return new Promise((resolve: any) =>
     setTimeout(() => {
@@ -23,6 +23,7 @@ export default ({ history }: Props) => {
         <Suspense fallback={<LoadingScreen />}>
           <Router history={history}>
             <Switch>
+              <Route path="/playing/music" component={ConstructionScreen} />
               <Route path="/playing/:movieId" component={VideoScreen} />
               <Route path="/" component={HomeScreen} />
             </Switch>
