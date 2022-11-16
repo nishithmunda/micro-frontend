@@ -3,8 +3,9 @@ import "./style.css";
 import VideoPlayer from "../VideoPlayer";
 import Axios from "../../ApiRequests/instance";
 import { useParams } from "react-router-dom";
-import { API_KEY } from "../../ApiRequests/requests";
+import requests, { API_KEY } from "../../ApiRequests/requests";
 import { toHoursAndMinutes } from "../../utility";
+import { Column } from "../HomeScreen/Column";
 
 const base_url = "https://image.tmdb.org/t/p/original/";
 const VideoScreen = () => {
@@ -86,7 +87,12 @@ const VideoScreen = () => {
           <div className="vertical__space30"></div>
         </div>
       </div>
-      <div className="videoscreen__recommand__section"></div>
+      <div className="videoscreen__recommand__section">
+      <Column
+          title="Trending Now"
+          fetchUrl={requests.fetchTrending}
+        />
+      </div>
     </div>
   );
 };

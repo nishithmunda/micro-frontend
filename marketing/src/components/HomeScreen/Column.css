@@ -1,0 +1,33 @@
+.column {
+  text-align: center;  
+  color: #fff;
+}
+
+.column__posters {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 20px 20px 20px;
+  justify-content: center;
+
+  height: 100vh;
+  overflow-y: auto;
+
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.column__posters::-webkit-scrollbar {
+  display: none;
+}
+
+.column__poster {
+  object-fit: contain;
+  height: 200px;
+  margin: 0 10px 10px 0;
+  transition: transform 450ms;
+}
+
+.column__poster:hover {
+  cursor: pointer;
+  transform: scale(1.08);
+}

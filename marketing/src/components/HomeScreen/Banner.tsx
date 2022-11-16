@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from "react";
+import { useHistory } from "react-router-dom";
 import Axios from "../../ApiRequests/instance";
 import requests from "../../ApiRequests/requests";
 import "./Banner.css";
 import { MovieType } from "./Row";
 
 function Banner() {
+  const history = useHistory();
   const [movie, setMovie] = useState<MovieType>();
 
   useEffect(() => {
@@ -39,8 +41,12 @@ function Banner() {
         <h1 className="banner__title">{movie?.title || movie?.name}</h1>
 
         <div className="banner__buttons">
-          <button className="banner__button">Play</button>
-          <button className="banner__button">My List</button>
+          <button
+            className="banner__button"
+            onClick={() => history.push(`/playing/${movie?.id}`)}
+          >
+            Play
+          </button>
         </div>
 
         <h2 className="banner__description">
