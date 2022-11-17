@@ -16,10 +16,10 @@ const devConfig = {
   },
   plugins: [
     new ModuleFederationPlugin({
-      name: 'marketing',
+      name: 'videoapp',
       filename: 'remoteEntry.js',
       exposes: {
-        './MarketingApp': './src/bootstrap',
+        './VideoApp': './src/bootstrap',
       },
       shared: packageJson.dependencies,
     }),

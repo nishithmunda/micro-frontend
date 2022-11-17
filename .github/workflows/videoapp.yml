@@ -1,15 +1,15 @@
-name: deploy-marketing
+name: deploy-videpapp
 
 on:
   push:
     branches:
       - main
     paths:
-      - "marketing/**"
+      - "videoapp/**"
 
 defaults:
   run:
-    working-directory: marketing
+    working-directory: videoapp
 jobs:
   build:
     runs-on: ubuntu-latest

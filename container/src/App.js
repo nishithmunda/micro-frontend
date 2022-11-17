@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import MarketingApp from "./components/MarketingApp";
+import VideoApp from "./components/VideoApp";
 import AuthApp from "./components/AuthApp";
 import Navbar from "./components/Navigate/Navbar";
 import Sidebar from "./components/Sidebar";
@@ -18,7 +18,7 @@ export default () => {
           <Route path="/auth" component={AuthApp}>
             <AuthApp setSignIn={(e) => setIsSignIn(e)} />
           </Route>
-          <Route path="/" component={MarketingApp} />
+          <Route path="/" component={VideoApp} />
         </Switch>
       </BrowserRouter>
     </div>
